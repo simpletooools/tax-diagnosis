@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>住民税はいくら増える？簡易チェック</title>
+  <meta name="description" content="副業や収入増で住民税がどれくらい影響するかを簡単にチェックできます。">
+  <style>
+    body { font-family: sans-serif; background:#f7f7f7; padding:20px; }
+    .box { background:#fff; padding:20px; border-radius:8px; max-width:600px; margin:auto; }
+    button { padding:10px 16px; margin:10px 0; }
+    .q { display:none; }
+    .q.active { display:block; }
+  </style>
+</head>
+<body>
+<div class="box">
+
+<h1>住民税はいくら増える？<br>簡易チェック</h1>
+
+<div id="q1" class="q active">
+  <p>Q1. 今年、給与以外の収入はありますか？</p>
+  <button onclick="next('q2')">ある</button>
+  <button onclick="result('none')">ない</button>
+</div>
+
+<div id="q2" class="q">
+  <p>Q2. 副業やその他の収入は増えましたか？</p>
+  <button onclick="next('q3')">増えた</button>
+  <button onclick="result('low')">ほぼ変わらない</button>
+</div>
+
+<div id="q3" class="q">
+  <p>Q3. 確定申告や住民税の申告を行いましたか？</p>
+  <button onclick="result('up')">はい</button>
+  <button onclick="result('care')">まだ・これから</button>
+</div>
+
+<div id="result" class="q">
+  <h2 id="resultText"></h2>
+  <p style="font-size:14px;">
+    ※本チェックは目安です。実際の税額は自治体や状況により異なります。
+  </p>
+</div>
+
+<hr>
+<p>
+  👉 <a href="sidejob-check.html">副業が会社にバレる？診断</a><br>
+  👉 <a href="index.html">確定申告が必要か診断</a>
+</p>
+
+<p style="margin-top:20px;">
+  <a href="privacy.html">プライバシーポリシー</a>
+</p>
+
+</div>
+
+<script>
+function next(id){
+  document.querySelector('.q.active').classList.remove('active');
+  document.getElementById(id).classList.add('active');
+}
+function result(type){
+  document.querySelector('.q.active').classList.remove('active');
+  document.getElementById('result').classList.add('active');
+  const t = document.getElementById('resultText');
+  if(type==='none') t.innerText='給与以外の収入がなければ、住民税が大きく増える可能性は低いです。';
+  if(type==='low') t.innerText='収入が大きく変わらなければ、住民税への影響も限定的です。';
+  if(type==='up') t.innerText='収入増により、住民税が増える可能性があります。通知額を確認しましょう。';
+  if(type==='care') t.innerText='申告状況によっては、後から住民税が増えることがあります。注意が必要です。';
+}
+</script>
+
+</body>
+</html>
