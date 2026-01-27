@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>副業が会社にバレる？住民税セルフ診断</title>
+  <meta name="description" content="副業が会社にバレる可能性を、住民税の仕組みから簡単にセルフ診断します。">
+  <style>
+    body { font-family: sans-serif; background:#f7f7f7; padding:20px; }
+    .box { background:#fff; padding:20px; border-radius:8px; max-width:600px; margin:auto; }
+    button { padding:10px 16px; margin:10px 0; }
+    .q { display:none; }
+    .q.active { display:block; }
+  </style>
+</head>
+<body>
+<div class="box">
+
+<h1>副業が会社にバレる？<br>住民税セルフ診断</h1>
+
+<div id="q1" class="q active">
+  <p>Q1. 副業の収入はありますか？</p>
+  <button onclick="next('q2')">ある</button>
+  <button onclick="result('none')">ない</button>
+</div>
+
+<div id="q2" class="q">
+  <p>Q2. 副業の収入は年間20万円を超えていますか？</p>
+  <button onclick="next('q3')">はい</button>
+  <button onclick="result('low')">いいえ</button>
+</div>
+
+<div id="q3" class="q">
+  <p>Q3. 確定申告で住民税の徴収方法を選びましたか？</p>
+  <button onclick="result('risk')">特別徴収（会社）</button>
+  <button onclick="result('safe')">普通徴収（自分で納付）</button>
+</div>
+
+<div id="result" class="q">
+  <h2 id="resultText"></h2>
+  <p style="font-size:14px;">
+    ※本診断は一般的な情報提供を目的としたもので、結果を保証するものではありません。
+  </p>
+</div>
+
+<p style="margin-top:20px;">
+  <a href="privacy.html">プライバシーポリシー</a>
+</p>
+
+</div>
+
+<script>
+function next(id){
+  document.querySelector('.q.active').classList.remove('active');
+  document.getElementById(id).classList.add('active');
+}
+function result(type){
+  document.querySelector('.q.active').classList.remove('active');
+  document.getElementById('result').classList.add('active');
+  const t = document.getElementById('resultText');
+  if(type==='none') t.innerText='副業収入がないため、会社にバレる心配はほぼありません。';
+  if(type==='low') t.innerText='少額のため、バレる可能性は低いですが、申告状況には注意が必要です。';
+  if(type==='risk') t.innerText='住民税が会社経由になるため、会社に気付かれる可能性があります。';
+  if(type==='safe') t.innerText='普通徴収を選んでいれば、会社にバレるリスクは比較的低いです。';
+}
+</script>
+
+</body>
+</html>
