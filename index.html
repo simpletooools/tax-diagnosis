@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>副業の確定申告は必要？不要？｜20万円ルールが3分で分かる無料診断</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="副業の確定申告が必要か、20万円ルールをもとに3分で分かる無料診断。会社員の副業向け。">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .question {
+      margin-top: 30px;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .yes {
+      background: #4caf50;
+      color: #fff;
+    }
+    .no {
+      background: #f44336;
+      color: #fff;
+    }
+    .result {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      background: #f0f0f0;
+      border-radius: 6px;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+    }
+    a {
+      color: #0066cc;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>副業の確定申告は必要？不要？</h1>
+  <p>
+    副業の確定申告が必要かどうかは、<strong>20万円ルール</strong>などの条件によって変わります。<br>
+    質問に答えるだけで、あなたの状況を簡単に確認できます。
+  </p>
+
+  <div id="question1" class="question">
+    <p><strong>Q1. 副業の年間所得（売上−経費）は20万円を超えていますか？</strong></p>
+    <button class="yes" onclick="yes1()">はい</button>
+    <button class="no" onclick="no1()">いいえ</button>
+  </div>
+
+  <div id="question2" class="question" style="display:none;">
+    <p><strong>Q2. 副業以外に、申告が必要になりそうな収入はありますか？</strong></p>
+    <button class="yes" onclick="yes2()">はい</button>
+    <button class="no" onclick="no2()">いいえ</button>
+  </div>
+
+  <div id="result-need" class="result">
+    <h2>確定申告が必要な可能性が高いです</h2>
+    <p>
+      今の状況では、副業の確定申告が必要になる可能性が高いです。<br>
+      副業の所得が年間20万円を超えている場合などは、確定申告が必要になります。
+    </p>
+    <p>
+      確定申告が必要な場合、会計ソフトを使うと作業を大幅に減らせます。
+    </p>
+    <p>
+      ▼ freeeで確定申告を始める（無料）<br>
+      <a href="ここにfreeeのアフィリエイトリンク">https://www.freee.co.jp/</a>
+    </p>
+    <p style="font-size:13px;">※本リンクはアフィリエイト広告（PR）を含みます</p>
+  </div>
+
+  <div id="result-no-need" class="result">
+    <h2>確定申告は不要な可能性が高いです</h2>
+    <p>
+      今の状況では、副業の確定申告は不要な可能性が高いです。<br>
+      ただし、住民税の申告が必要になるケースや、今後収入が増えた場合には注意が必要です。
+    </p>
+    <p>
+      将来に備えて、収入管理だけでも始めておくと安心です。
+    </p>
+    <p>
+      ▼ freeeを無料で試してみる<br>
+      <a href="ここにfreeeのアフィリエイトリンク">https://www.freee.co.jp/</a>
+    </p>
+    <p style="font-size:13px;">※本リンクはアフィリエイト広告（PR）を含みます</p>
+  </div>
+
+  <footer>
+    <a href="privacy.html">プライバシーポリシー</a>
+  </footer>
+</div>
+
+<script>
+  function yes1() {
+    document.getElementById("question1").style.display = "none";
+    document.getElementById("question2").style.display = "block";
+  }
+
+  function no1() {
+    document.getElementById("question1").style.display = "none";
+    document.getElementById("result-no-need").style.display = "block";
+  }
+
+  function yes2() {
+    document.getElementById("question2").style.display = "none";
+    document.getElementById("result-need").style.display = "block";
+  }
+
+  function no2() {
+    document.getElementById("question2").style.display = "none";
+    document.getElementById("result-no-need").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
